@@ -1,0 +1,36 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+<div class="col-md-6 offset-md-3">
+  {% if user.is_authenticated %}
+  <h1>Contenido que se le muestra al usuario que está logueado</h1>
+
+  {% else %}
+  <h1>Formulario de inicio</h1>
+  <form>
+    <div class="mb-3">
+      <label for="usernameInput" class="form-label"
+        >Nombre de usuario</label
+      >
+      <input
+        class="form-control"
+        id="usernameInput"
+        name="username"
+        type="text"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="passwordInput" class="form-label">Contraseña</label>
+      <input
+        class="form-control"
+        id="passwordInput"
+        name="password"
+        type="password"
+      />
+    </div>
+    <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+  </form>
+
+  {% endif %}
+</div>
+{% endblock %}
