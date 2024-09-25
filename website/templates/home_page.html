@@ -3,6 +3,11 @@
 <div class="col-md-6 offset-md-3">
   {% if user.is_authenticated %}
   <h1>Contenido que se le muestra al usuario que está logueado</h1>
+  <ul>
+  {% for record in records %}
+    <li>{{record.first_name}}, {{record.email}}, {{record.phone}}</li> 
+  {% endfor %}
+  </ul>
 
   {% else %}
   <h1 class="mt-3">Formulario de inicio</h1>
